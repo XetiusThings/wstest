@@ -9,7 +9,6 @@ pipeline {
 		stage('Winning') {
 			steps {
 					echo "Winning"
-				}
 			}
 		}
 	}
