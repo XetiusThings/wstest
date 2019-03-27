@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	options {
-		checkoutToSubdirectory(GetProjectNameFromJobName(JOB_NAME)
+		checkoutToSubdirectory(GetProjectNameFromJobName(JOB_NAME))
 	}
 	
 	stages {
