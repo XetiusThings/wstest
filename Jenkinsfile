@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	options {
-		checkoutToSubdirectory("directory")
+		checkoutToSubdirectory(GetProjectNameFromJobName(JOB_NAME)
 	}
 	
 	stages {
@@ -13,4 +13,15 @@ pipeline {
 			}
 		}
 	}
+}
+
+def GetProjectNameFromJobName(def jobName) {
+    println "jobName : ${jobName}"
+    
+    if (jobName.contains("/")) {
+        parts = jobName.split("/")
+        return parts[parts.size() - 2]
+    } else {
+        return jobName
+    }
 }
