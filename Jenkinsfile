@@ -8,8 +8,7 @@ pipeline {
 	stages {
 		stage('Winning') {
 			steps {
-					echo "JOB_NAME : ${JOB_NAME}"
-					echo "Winning"
+					echo "Repository is now checked out in the subdirectory " + GetProjectNameFromJobName(JOB_NAME)
 			}
 		}
 	}
