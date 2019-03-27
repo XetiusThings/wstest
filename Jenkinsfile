@@ -2,14 +2,13 @@ pipeline {
 	agent any
 
 	options {
-		skipDefaultCheckout true
+		checkoutToSubdirectory(currentBuild.projectName)
 	}
 	
 	stages {
-		stage ('Checkout') {
+		stage('Winning') {
 			steps {
-				dir('${currentBuild.projectName}') {
-					checkout scm
+					echo "Winning"
 				}
 			}
 		}
