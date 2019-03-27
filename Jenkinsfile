@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	options {
-		checkoutToSubdirectory(currentBuild.projectName)
+		checkoutToSubdirectory("${WORKSPACE})
 	}
 	
 	stages {
