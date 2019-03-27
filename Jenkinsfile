@@ -1,8 +1,10 @@
 pipeline {
 	stages {
-		stage {
-			dir('${PROJECT_NAME}') {
-				checkout scm
+		stage ('Checkout') {
+			steps {
+				dir('${PROJECT_NAME}') {
+					checkout scm
+				}
 			}
 		}
 	}
