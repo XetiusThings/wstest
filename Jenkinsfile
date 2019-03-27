@@ -1,9 +1,14 @@
 pipeline {
 	agent any
+
+	options {
+		skipDefaultCheckout true
+	}
+	
 	stages {
 		stage ('Checkout') {
 			steps {
-				dir('${PROJECT_NAME}') {
+				dir('${currentBuild.projectName}') {
 					checkout scm
 				}
 			}
